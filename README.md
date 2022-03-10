@@ -4,6 +4,9 @@
 This project consists of making a secure system through Classloader on Android. For this we will use a server and other resources in Java/JNI.
 The classloader basically as the name says is a "class loader". In this way, we can load an APK dynamically and use its resources "online".
 
+[![](https://pandao.github.io/editor.md/examples/images/7.jpg)](https://pandao.github.io/editor.md/examples/images/7.jpg "See in the video")
+
+
 ## Is this system secure?
 
 Well, there is no system that is 100% secure. If you can, for example, encode a word to base64, you can decode it. This goes for all types of encryption. Of course, stronger encryption systems exist, but at some point they will become obsolete.
