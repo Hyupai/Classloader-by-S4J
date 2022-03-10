@@ -8,6 +8,7 @@ Thanks to:
 - https://github.com/LGLTeam/Android-Mod-Menu
 - https://github.com/kp7742/PUBGPatcher
 - https://github.com/Catherine22/ClassLoader
+- +55 77 9129-4621
 
 
 Click in the image below to see the video!
