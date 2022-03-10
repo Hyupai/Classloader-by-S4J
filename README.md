@@ -93,7 +93,7 @@ But i can close and answer yours by the Issues tab or in my Telegram: @HyupaiJok
 
 ## I need more security
 
-Download the NP Manager that I left in the repository and look for the **DexToC** function, it is the only one that cannot be reversed. Use it in the Main App or in the Loader, however in the Loader you will have to load it by the server.
+Download the NP Manager that I left in https://drive.google.com/file/d/1pd7bTFkF4b5A8BHDJbmh9LcNpWQJw7h1/view?usp=sharing and look for the **DexToC** function, it is the only one that cannot be reversed. Use it in the Main App or in the Loader, however in the Loader you will have to load it by the server.
 
 ## Known Bugs
 
