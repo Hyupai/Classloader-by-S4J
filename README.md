@@ -1,33 +1,33 @@
 ## Classloader Version S4J
 
-**O que é esse projeto?**
-Este projeto consiste em fazer um sistema seguro por meio do Classloader no Android. Para isso usaremos de um servidor e dos demais recursos em Java/JNI.
-O classloader basicamente como diz o nome é um "carregador de classes". Desse modo podemos carregar um APK dinamicamente e utilizar de seus recursos de forma "online".
+**What is this project?**
+This project consists of making a secure system through Classloader on Android. For this we will use a server and other resources in Java/JNI.
+The classloader basically as the name says is a "class loader". In this way, we can load an APK dynamically and use its resources "online".
 
-#### Esse sistema é seguro?
+#### Is this system secure?
 
-Bom, não existe um sistema que seja 100% seguro. Se voce pode, por exemplo encodar uma palavra para base64, voce pode decodifica-la. Isso vale para todos os tipos de encriptação. É claro que existem sistemas de encriptação mais fortes, mas em algum momento ficarão obsoletos.
+Well, there is no system that is 100% secure. If you can, for example, encode a word to base64, you can decode it. This goes for all types of encryption. Of course, stronger encryption systems exist, but at some point they will become obsolete.
 
-Porem, eu posso afirmar que esse sistema é um pouco mais complexo de ser quebrado. As pessoas podem procurar as brechas e encontra-las, ainda mais em um open source. Eu não lançarei updates entao você mesmo terá que fazer proteções extras caso deseje. Eu deixarei algumas mais para o final.
+However, I can say that this system is a little more complex to break. People can look for loopholes and find them, even more so in an open source. I won't release updates so you'll have to do extra protections yourself if you want. I'll save a few more for last.
 
-#### Quais as diferenças entre esse e o seu projeto anterior?
+#### What are the differences between this and your previous project?
 
-Bom aqui vão algumas diferenças:
+Well here are some differences:
 
-- Esse projeto usa alguns metodos JNI para melhor proteção...
-- Uso de AES para encriptar a resposta do servidor
-- A key para o AES é gerada somente quando o usuario é autenticado
-- Confirmação da sessao do usuario, etc
-- Compatibilidade com Android 12
+- This project uses some JNI methods for better protection...
+- Use of AES to encrypt the server response
+- The key for AES is generated only when the user is authenticated
+- User session confirmation, etc.
+- Android 12 compatibility
 
-#### Dicas de utilização:
+#### Usage tips:
 
-Ter conhecimento em PHP, JAVA, JNI(C++) é fundamental. Aqui vai algumas explicações em relação aos metodos;
+Knowledge of PHP, JAVA, JNI(C++) is essential. Here are some explanations regarding the methods;
 
 - Encrypt (Android Project)
 
-     `Log.i("JNI", MainActivity.Encrypt("Sting to Encrypt"));`
-	 aqui voce exibi a string encriptada no logcat
+     `Log.i("JNI", MainActivity.Encrypt("String to Encrypt"));`
+here you display the encrypted string in logcat
 
 - Encrypt(PHP)
 
@@ -37,68 +37,67 @@ Ter conhecimento em PHP, JAVA, JNI(C++) é fundamental. Aqui vai algumas explica
 
  - Decrypt (Android Project)
 
-     `Log.i("JNI", MainActivity.Decrypt("Sting to Encrypt"));`
-	 aqui voce exibi a string decriptada no logcat
+     `Log.i("JNI", MainActivity.Decrypt("String to Decrypt"));`
+here you display the decrypted string in logcat
 
-- Stack
+- stack
 
-Voce pode armazenar uma variavei em sua JNI usando:
+You can store a variable in your JNI using:
 `MainActivity.Stack(int id, String str);`
 
-e pode obtela por meio do:
+and you can get it through:
 `MainActivity.getStack(int id, bool isEncrypt);`
 
-o bool isEncrypt serve para o metodo de Decrypt, ou seja se voce armazenar uma string que foi Encrypt voce pode decripta-la automaticamente;
+the bool isEncrypt is used for the Decrypt method, that is, if you store a string that was Encrypted you can automatically decrypt it;
 
-#### Conceitos
+#### Concepts
 
-**Limite de entrada** => Existe um limite de 128 bytes que voce pode enviar ao servidor. Por isso os usarios sao limitados a 16 caracteres, ja que outras coisas tambem sao enviadas;
+**Input limit** => There is a limit of 128 bytes you can send to the server. That's why users are limited to 16 characters, as other things are also sent;
 
-**Limite de memoria** => O limite de memoria é uma configuração do servidor, isso varia de cada hospedagem ou de sua configuração.
-Se voce fizer uma requisição ao servidor e ele nao apresentar "Server Error" ou nenhuma resposta essa pode ser a causa. Se seus Apks/libs forem muito grandes isso pode ocorrer.
+**Memory limit** => The memory limit is a server configuration, it varies from each hosting or its configuration.
+If you make a request to the server and it doesn't show "Server Error" or no response this could be the cause. If your Apks/libs are too big this can happen.
 
-**DDOS** => Eles podem fazer multiplas solicitações ao seu servidor. Voce pode resolver isso utilizando Cloudflare ou filtrando IPs ou User Agents..
+**DDOS** => They can make multiple requests to your server. You can solve this using Cloudflare or filtering IPs or User Agents..
 
-**My Sql Inject** => Nessao versão foram corrigidos falhas relacionadas a isso. O DeviceID é obtido por meio do codigo nativo e os parametros sao passados por uma verificação no codigo JNI. Tambem é utilizado o `real_escape_string` do mysql no login.php
+**My Sql Inject** => In this version bugs related to this were fixed. The DeviceID is obtained through the native code and the parameters are passed a check in the JNI code. Also used mysql `real_escape_string` in login.php
 
-**Fechamento no App?** => Verifique o logcat, verifique as versoes de arquitetura das libs coincidem.
+**App shutdown?** => Check the logcat, check the architecture versions of the libs match.
 
-### Dicas
+### Tips
 
-**Se seu android studio não esta compilando o codigo JNI:**
+**If your android studio is not compiling the JNI code:**
 
-Voce pode usar o DAEMON que esta na pasta do projeto, basta trocar o diretorio dentro do arquivo make.bat e executar com a pasta JNI.
+You can use the DAEMON that is in the project folder, just change the directory inside the make.bat file and run it with the JNI folder.
 
-**Como eu uso implementações como Toast Customizado, Alertas com GIFS?**
+**How do I use implementations like Custom Toast, Alerts with GIFS?**
 
-Implemente isso na build.gradle do modulo app e do modulo loader e use a vontade.
+Implement this in the build.gradle of the app module and the loader module and use it at will.
 
-**Posso eu usar isso no AIDE?**
+**Can I use this in AIDE?**
 
-Sim, desde que saiba o que esta fazendo
+Yes, as long as you know what you're doing.
 
-**Posso vender esse projeto?**
+**Can I sell this project?**
 
-Nao acho que alguem compraria algo publico.
+I don't think anyone would buy something public.
 
-**Eu nao entendo nada do seu projeto, meus olhos doem**
+**I don't understand anything about your project, my eyes hurt**
 
-Solução => Nao procure fazer uma redação em alemão se voce nao sabe nem falar alemão.
-Do mesmo jeito nao procure usar esse projeto se voce nao sabe nem le-lo.
+Solution => Don't try to write an essay in German if you don't even know how to speak German.
+Likewise, don't try to use this project if you don't even know how to read it.
 
 #### Updates
 
-Esse projeto nao tera updates a nao ser sobre uma falha que exponha os dados.
+This project will not have updates unless there is a bug that exposes the data.
 
-## Eu preciso de mais segurança
+## I need more security
 
-Baixe o NP Manager que eu deixei no repositorio e procure pela função de **DexToC** ela é a unica que nao pode ser revertida. Utilize ela no App Principal ou no Loader, porem no Loader voce tera que carrega-la pelo servidor.
+Download the NP Manager that I left in the repository and look for the **DexToC** function, it is the only one that cannot be reversed. Use it in the Main App or in the Loader, however in the Loader you will have to load it by the server.
 
-## Bugs Conhecidos
+## Known Bugs
 
-- No primeiro acesso do usuario ele diz algo sobre o UID, mas é apenas clicar novamente que vai;
+- In the first access of the user it says something about the UID, but just click again that goes;
 
-- As vezes ele nao encontra o APK no cache;
+- Sometimes it doesn't find the APK in the cache;
 
-- As vezes ele falha em colocar o "tempaeskey" do usuario (Mesmo caso do UID);
-
+- Sometimes it fails to put the user's "tempaeskey" (Same case as the UID);
