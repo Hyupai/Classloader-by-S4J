@@ -4,13 +4,13 @@
 This project consists of making a secure system through Classloader on Android. For this we will use a server and other resources in Java/JNI.
 The classloader basically as the name says is a "class loader". In this way, we can load an APK dynamically and use its resources "online".
 
-#### Is this system secure?
+## Is this system secure?
 
 Well, there is no system that is 100% secure. If you can, for example, encode a word to base64, you can decode it. This goes for all types of encryption. Of course, stronger encryption systems exist, but at some point they will become obsolete.
 
 However, I can say that this system is a little more complex to break. People can look for loopholes and find them, even more so in an open source. I won't release updates so you'll have to do extra protections yourself if you want. I'll save a few more for last.
 
-#### What are the differences between this and your previous project?
+## What are the differences between this and your previous project?
 
 Well here are some differences:
 
@@ -20,7 +20,7 @@ Well here are some differences:
 - User session confirmation, etc.
 - Android 12 compatibility
 
-#### Usage tips:
+## Usage tips:
 
 Knowledge of PHP, JAVA, JNI(C++) is essential. Here are some explanations regarding the methods;
 
@@ -50,7 +50,7 @@ and you can get it through:
 
 the bool isEncrypt is used for the Decrypt method, that is, if you store a string that was Encrypted you can automatically decrypt it;
 
-#### Concepts
+## Concepts
 
 **Input limit** => There is a limit of 128 bytes you can send to the server. That's why users are limited to 16 characters, as other things are also sent;
 
@@ -63,7 +63,7 @@ If you make a request to the server and it doesn't show "Server Error" or no res
 
 **App shutdown?** => Check the logcat, check the architecture versions of the libs match.
 
-### Tips
+## Tips
 
 **If your android studio is not compiling the JNI code:**
 
@@ -86,9 +86,10 @@ I don't think anyone would buy something public.
 Solution => Don't try to write an essay in German if you don't even know how to speak German.
 Likewise, don't try to use this project if you don't even know how to read it.
 
-#### Updates
+## Updates
 
 This project will not have updates unless there is a bug that exposes the data.
+But i can close and answer yours by the Issues tab or in my Telegram: @HyupaiJoker
 
 ## I need more security
 
