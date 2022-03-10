@@ -4,7 +4,7 @@
 This project consists of making a secure system through Classloader on Android. For this we will use a server and other resources in Java/JNI.
 The classloader basically as the name says is a "class loader". In this way, we can load an APK dynamically and use its resources "online".
 
-[![](https://pandao.github.io/editor.md/examples/images/7.jpg)](https://pandao.github.io/editor.md/examples/images/7.jpg "See in the video")
+[![](https://pandao.github.io/editor.md/examples/images/7.jpg)](https://www.youtube.com/watch?v=leRCIyKrsrM "See in the video")
 
 
 ## Is this system secure?
