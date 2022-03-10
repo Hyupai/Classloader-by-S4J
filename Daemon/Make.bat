@@ -1,0 +1,1 @@
+"C:\Users\samue\AppData\Local\Android\Sdk\ndk\23.1.7779620\ndk-build.cmd"
