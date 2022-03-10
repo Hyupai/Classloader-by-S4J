@@ -1,0 +1,2 @@
+include ':app', ':loader'
+rootProject.name = "Login Screen"
