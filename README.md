@@ -101,7 +101,7 @@ Likewise, don't try to use this project if you don't even know how to read it.
 ## Updates
 
 This project will not have updates unless there is a bug that exposes the data.
-But i can close and answer yours by the Issues tab or in my Telegram: @HyupaiJoker
+But i can close and answer yours by the Issues tab or in my Telegram: @samuel_fcr
 
 ## I need more security
 
